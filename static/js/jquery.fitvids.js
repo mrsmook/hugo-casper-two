@@ -9,6 +9,13 @@
 * Released under the MIT license
 *
 */
+$(function(){
+            var $elem = $('.post-card-excerpt p');         
+            var $limit = 150;        
+            var $str = $elem.html();    
+            var $strtemp = $str.substr(0,$limit);   
+           	$elem.html($strtemp);       // Write the string to the DOM
+        })
 
 ;(function( $ ){
 
