@@ -7,6 +7,14 @@
 {{ with .Site.Params.googleAnalytics }}
   {{ "<!-- Google Analytics -->" | safeHTML }}
   <script>
+    $(function(){
+            var $elem = $('.post-card-excerpt p');         
+            var $limit = 150;        
+            var $str = $elem.html();    
+            var $strtemp = $str.substr(0,$limit);   
+           	$elem.html($strtemp);       // Write the string to the DOM 
+     })
+    
     var _gaq=[['_setAccount','{{ . }}'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
